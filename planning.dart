@@ -4,7 +4,7 @@ import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'menu.dart';
 import 'package:science_lab_2/event_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:science_lab_2/classes/event.dart';
+//import 'package:science_lab_2/classes/event.dart';
 import 'package:science_lab_2/classes/event_data_source.dart';
 import 'package:science_lab_2/classes/tasks_widget.dart';
 
@@ -22,11 +22,11 @@ class _PlanningState extends State<Planning> {
     final events = Provider.of<EventProvider>(context).events;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Планирование'),
+        title: const Text('Планирование'),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             onPressed: () =>
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Menu())
@@ -48,7 +48,7 @@ class _PlanningState extends State<Planning> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () =>
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => EventEditing())

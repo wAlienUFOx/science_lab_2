@@ -42,7 +42,7 @@ class _PublicationsInProgressState extends State<PublicationsInProgress> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('В работе'),
+        title:  const Text('В работе'),
         centerTitle: true,
         actions: [
           IconButton(
@@ -50,9 +50,9 @@ class _PublicationsInProgressState extends State<PublicationsInProgress> {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => Publications())
                   ),
-              icon:  Icon(Icons.swap_horiz)),
+              icon:  const Icon(Icons.swap_horiz)),
           IconButton(
-            icon:  Icon(Icons.menu),
+            icon:  const Icon(Icons.menu),
             onPressed: () =>
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Menu())
@@ -65,12 +65,12 @@ class _PublicationsInProgressState extends State<PublicationsInProgress> {
       ),
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.lightBlue,
-          child:  Icon(Icons.add),
+          child:  const Icon(Icons.add),
           onPressed: () {
             showDialog(context: context, builder: (BuildContext context){
               return AlertDialog(
-                title:  Text('Добавить статью в работе'),
-                shape:  RoundedRectangleBorder(
+                title:  const Text('Добавить статью в работе'),
+                shape:  const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
                 content:
@@ -78,7 +78,7 @@ class _PublicationsInProgressState extends State<PublicationsInProgress> {
                   child: Column(
                     children: [
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Название статьи',
                         ),
                         onChanged: (String name){
@@ -94,7 +94,7 @@ class _PublicationsInProgressState extends State<PublicationsInProgress> {
                         onChanged: (_){},
                       ),*/
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Стадия производства',
                         ),
                         onChanged: (String stage){
@@ -102,7 +102,7 @@ class _PublicationsInProgressState extends State<PublicationsInProgress> {
                         },
                       ),
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Ссылка на среду производства',
                         ),
                         onChanged: (String link){
@@ -120,10 +120,10 @@ class _PublicationsInProgressState extends State<PublicationsInProgress> {
                       });
                       Navigator.of(context).pop();
                     },
-                    child:  Text('Добавить'),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.blue
                     ),
+                    child:  const Text('Добавить'),
                   )
                 ],
               );
@@ -137,40 +137,40 @@ class _PublicationsInProgressState extends State<PublicationsInProgress> {
   List<Widget> _buildList(){
     return dataP.map((PublicationInProgress e) =>
         Padding(
-          padding:  EdgeInsets.all(8.0),
+          padding:  const EdgeInsets.all(8.0),
           child: Container(child:
           Expanded(
-              flex: 7,
+              flex: 3,
               child: ClipRRect(
-                borderRadius:  BorderRadius.only(
+                borderRadius:  const BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     topLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                     topRight: Radius.circular(10)
                 ),
                 child: Container(
-                  decoration:  BoxDecoration(
+                  decoration:  const BoxDecoration(
                     color: Colors.blue,
                   ),
                   height: 150,
                   child: Padding(
-                    padding:  EdgeInsets.all(8.0),
+                    padding:  const EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(e.name,
-                          style:  TextStyle(
+                          style:  const TextStyle(
                             color: Colors.white,
                           ),),
                         Text(e.stage,
-                          style:  TextStyle(
+                          style:  const TextStyle(
                             color: Colors.white,
                           ),),
                         TextButton(
                             onPressed: () {/*initialUrl: e.link;*/},
                             child: Text(e.link,
-                              style:  TextStyle(
+                              style:  const TextStyle(
                                 color: Colors.white,
                               ),)
                         )

@@ -27,11 +27,11 @@ class _PublishState extends State<Publish> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('Опубликовать'),
+        title:  const Text('Опубликовать'),
         centerTitle: true,
         actions: [
           IconButton(
-            icon:  Icon(Icons.menu),
+            icon:  const Icon(Icons.menu),
             onPressed: () =>
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Menu())
@@ -45,7 +45,7 @@ class _PublishState extends State<Publish> {
             image != null ? Center(
               child: Column(
                 children: [
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child:
@@ -69,32 +69,32 @@ class _PublishState extends State<Publish> {
                     onPressed: () {
                       pickImage(ImageSource.camera);
                     },
-                    child:  Text('Открыть камеру'),
                     style: ElevatedButton.styleFrom(
-                        minimumSize:  Size(200.0, 40.0),
+                        minimumSize:  const Size(200.0, 40.0),
                         primary: Colors.blue
                     ),
+                    child:  const Text('Открыть камеру'),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       pickImage(ImageSource.gallery);
                     },
-                    child:  Text('Открыть галерею'),
                     style: ElevatedButton.styleFrom(
-                        minimumSize:  Size(200.0, 40.0),
+                        minimumSize:  const Size(200.0, 40.0),
                         primary: Colors.blue
                     ),
+                    child:  const Text('Открыть галерею'),
                   )
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             TextField(
               maxLines: 5,
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300, fontFamily: 'TimesNewRoman'),
-              decoration:  InputDecoration(
+              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w300, fontFamily: 'TimesNewRoman'),
+              decoration:  const InputDecoration(
                 labelText: 'Описание',
               ),
               onChanged: (String string){
@@ -105,7 +105,7 @@ class _PublishState extends State<Publish> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.send),
+        child: const Icon(Icons.send),
         onPressed: () {
           //space for export function
           Navigator.of(context).pop();

@@ -48,7 +48,7 @@ class _PublicationsState extends State<Publications> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('Публикации'),
+        title:  const Text('Публикации'),
         centerTitle: true,
         actions: [
           IconButton(
@@ -56,9 +56,9 @@ class _PublicationsState extends State<Publications> {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => PublicationsInProgress())
                   ),
-              icon:  Icon(Icons.swap_horiz)),
+              icon:  const Icon(Icons.swap_horiz)),
           IconButton(
-            icon:  Icon(Icons.menu),
+            icon:  const Icon(Icons.menu),
             onPressed: () =>
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Menu())
@@ -71,12 +71,12 @@ class _PublicationsState extends State<Publications> {
       ),
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.lightBlue,
-          child:  Icon(Icons.add),
+          child:  const Icon(Icons.add),
           onPressed: () {
             showDialog(context: context, builder: (BuildContext context){
               return AlertDialog(
-                title:  Text('Добавить статью'),
-                shape:  RoundedRectangleBorder(
+                title:  const Text('Добавить статью'),
+                shape:  const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
                 content:
@@ -84,7 +84,7 @@ class _PublicationsState extends State<Publications> {
                   child: Column(
                     children: [
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Название статьи',
                         ),
                         onChanged: (String name){
@@ -92,7 +92,8 @@ class _PublicationsState extends State<Publications> {
                         },
                       ),
                       TextField(
-                        decoration:  InputDecoration(
+                        keyboardType: TextInputType.number,
+                        decoration:  const InputDecoration(
                           labelText: 'Цитирований',
                         ),
                         onChanged: (String citation){
@@ -100,7 +101,7 @@ class _PublicationsState extends State<Publications> {
                         },
                       ),
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Авторы',
                         ),
                         onChanged: (String authors){
@@ -108,7 +109,7 @@ class _PublicationsState extends State<Publications> {
                         },
                       ),
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Опубликована в',
                         ),
                         onChanged: (String magazine){
@@ -116,7 +117,8 @@ class _PublicationsState extends State<Publications> {
                         },
                       ),
                       TextField(
-                        decoration:  InputDecoration(
+                        keyboardType: TextInputType.number,
+                        decoration:  const InputDecoration(
                           labelText: 'Год публикации',
                         ),
                         onChanged: (String year){
@@ -124,7 +126,7 @@ class _PublicationsState extends State<Publications> {
                         },
                       ),
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Ссылка на elibrary',
                         ),
                         onChanged: (String link){
@@ -138,15 +140,14 @@ class _PublicationsState extends State<Publications> {
                   ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        //data.add(publ);
                         data.add(PublicationDone(publ.name, publ.authors, publ.year, publ.magazine, publ.citation, publ.link));
                       });
                       Navigator.of(context).pop();
                     },
-                    child:  Text('Добавить'),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.blue
                     ),
+                    child:  const Text('Добавить'),
                   )
                 ],
               );
@@ -160,30 +161,30 @@ class _PublicationsState extends State<Publications> {
   List<Widget> _buildList(){
     return data.map((PublicationDone e) =>
         Padding(
-          padding:  EdgeInsets.all(8.0),
+          padding:  const EdgeInsets.all(8.0),
           child: Container(child:
           Row(
             children: [
               Expanded(
                   flex: 3,
                   child: ClipRRect(
-                    borderRadius:  BorderRadius.only(
+                    borderRadius:  const BorderRadius.only(
                         bottomLeft: Radius.circular(10),
                         topLeft: Radius.circular(10)
                     ),
                     child: Container(
-                      decoration:  BoxDecoration(
+                      decoration:  const BoxDecoration(
                         color: Colors.blue,
                       ),
                       height: 200,
                       child: Padding(
-                        padding:  EdgeInsets.all(8.0),
+                        padding:  const EdgeInsets.all(8.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(e.citation,
-                              style:  TextStyle(
+                              style:  const TextStyle(
                                 color: Colors.white,
                                 fontSize: 60,
                               ),
@@ -198,41 +199,41 @@ class _PublicationsState extends State<Publications> {
               Expanded(
                   flex: 7,
                   child: ClipRRect(
-                    borderRadius:  BorderRadius.only(
+                    borderRadius:  const BorderRadius.only(
                         bottomRight: Radius.circular(10),
                         topRight: Radius.circular(10)
                     ),
                     child: Container(
-                      decoration:  BoxDecoration(
+                      decoration:  const BoxDecoration(
                         color: Colors.blue,
                       ),
                       height: 200,
                       child: Padding(
-                        padding:  EdgeInsets.all(8.0),
+                        padding:  const EdgeInsets.all(8.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(e.name,
-                              style:  TextStyle(
+                              style:  const TextStyle(
                                 color: Colors.white,
                               ),),
                             Text(e.authors,
-                              style:  TextStyle(
+                              style:  const TextStyle(
                                 color: Colors.white,
                               ),),
                             Text(e.magazine,
-                              style:  TextStyle(
+                              style:  const TextStyle(
                                 color: Colors.white,
                               ),),
                             Text(e.year,
-                              style:  TextStyle(
+                              style:  const TextStyle(
                                 color: Colors.white,
                               ),),
                             TextButton(
                                 onPressed: () {/*initialUrl: e.link;*/},
                                 child: Text(e.link,
-                                  style:  TextStyle(
+                                  style:  const TextStyle(
                                     color: Colors.white,
                                   ),)
                             )

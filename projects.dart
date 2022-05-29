@@ -42,7 +42,7 @@ class _ProjectsState extends State<Projects> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Проекты'),
+        title: const Text('Проекты'),
         centerTitle: true,
         actions: [
           IconButton(
@@ -50,9 +50,9 @@ class _ProjectsState extends State<Projects> {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => Project_event())
                   ),
-              icon:  Icon(Icons.event)),
+              icon:  const Icon(Icons.event)),
           IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             onPressed: () =>
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Menu())
@@ -65,12 +65,12 @@ class _ProjectsState extends State<Projects> {
       ),
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.lightBlue,
-          child:  Icon(Icons.add),
+          child:  const Icon(Icons.add),
           onPressed: () {
             showDialog(context: context, builder: (BuildContext context){
               return AlertDialog(
-                title:  Text('Добавить информацию о проекте'),
-                shape:  RoundedRectangleBorder(
+                title:  const Text('Добавить информацию о проекте'),
+                shape:  const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
                 content:
@@ -78,7 +78,7 @@ class _ProjectsState extends State<Projects> {
                   child: Column(
                     children: [
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Название проекта',
                         ),
                         onChanged: (String name){
@@ -86,7 +86,7 @@ class _ProjectsState extends State<Projects> {
                         },
                       ),
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Описание',
                         ),
                         onChanged: (String description){
@@ -94,7 +94,7 @@ class _ProjectsState extends State<Projects> {
                         },
                       ),
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Стадия реализации',
                         ),
                         onChanged: (String stage){
@@ -112,10 +112,10 @@ class _ProjectsState extends State<Projects> {
                       });
                       Navigator.of(context).pop();
                     },
-                    child:  Text('Добавить'),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.blue
                     ),
+                    child:  const Text('Добавить'),
                   )
                 ],
               );
@@ -129,38 +129,38 @@ class _ProjectsState extends State<Projects> {
   List<Widget> _buildList(){
     return data.map((Project e) =>
         Padding(
-          padding:  EdgeInsets.all(8.0),
+          padding:  const EdgeInsets.all(8.0),
           child: Container(child:
           Expanded(
-              flex: 7,
+              flex: 3,
               child: ClipRRect(
-                borderRadius:  BorderRadius.only(
+                borderRadius:  const BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     topLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                     topRight: Radius.circular(10)
                 ),
                 child: Container(
-                  decoration:  BoxDecoration(
+                  decoration:  const BoxDecoration(
                     color: Colors.blue,
                   ),
                   height: 150,
                   child: Padding(
-                    padding:  EdgeInsets.all(8.0),
+                    padding:  const EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(e.name,
-                          style:  TextStyle(
+                          style:  const TextStyle(
                             color: Colors.white, fontSize: 20
                           ),),
                         Text(e.description,
-                          style:  TextStyle(
+                          style:  const TextStyle(
                             color: Colors.white,
                           ),),
                         Text(e.stage,
-                          style:  TextStyle(
+                          style:  const TextStyle(
                             color: Colors.white,
                           ),),
                       ],

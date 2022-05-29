@@ -38,7 +38,7 @@ class _Project_eventState extends State<Project_event> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Мероприятия'),
+        title: const Text('Мероприятия'),
         centerTitle: true,
         actions: [
           IconButton(
@@ -46,9 +46,9 @@ class _Project_eventState extends State<Project_event> {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => Projects())
                   ),
-              icon:  Icon(Icons.list_alt)),
+              icon:  const Icon(Icons.list_alt)),
           IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             onPressed: () =>
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Menu())
@@ -61,12 +61,12 @@ class _Project_eventState extends State<Project_event> {
       ),
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.lightBlue,
-          child:  Icon(Icons.add),
+          child:  const Icon(Icons.add),
           onPressed: () {
             showDialog(context: context, builder: (BuildContext context){
               return AlertDialog(
-                title:  Text('Добавить информацию о проекте'),
-                shape:  RoundedRectangleBorder(
+                title:  const Text('Добавить информацию о проекте'),
+                shape:  const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
                 content:
@@ -74,7 +74,7 @@ class _Project_eventState extends State<Project_event> {
                   child: Column(
                     children: [
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Название проекта',
                         ),
                         onChanged: (String name){
@@ -82,7 +82,7 @@ class _Project_eventState extends State<Project_event> {
                         },
                       ),
                       TextField(
-                        decoration:  InputDecoration(
+                        decoration:  const InputDecoration(
                           labelText: 'Описание мероприятия',
                         ),
                         onChanged: (String description){
@@ -101,10 +101,10 @@ class _Project_eventState extends State<Project_event> {
                       });
                       Navigator.of(context).pop();
                     },
-                    child:  Text('Добавить'),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.blue
                     ),
+                    child:  const Text('Добавить'),
                   )
                 ],
               );
@@ -118,45 +118,45 @@ class _Project_eventState extends State<Project_event> {
   List<Widget> _buildList(){
     return data.map((Event e) =>
         Padding(
-          padding:  EdgeInsets.all(8.0),
+          padding:  const EdgeInsets.all(8.0),
           child: Container(child:
           Expanded(
-              flex: 7,
+              flex: 3,
               child: ClipRRect(
-                borderRadius:  BorderRadius.only(
+                borderRadius:  const BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     topLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                     topRight: Radius.circular(10)
                 ),
                 child: Container(
-                  decoration:  BoxDecoration(
+                  decoration:  const BoxDecoration(
                     color: Colors.blue,
                   ),
                   height: 150,
                   child: Padding(
-                    padding:  EdgeInsets.all(8.0),
+                    padding:  const EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(e.name,
-                          style:  TextStyle(
+                          style:  const TextStyle(
                               color: Colors.white, fontSize: 20
                           ),),
                         Text(e.description,
-                          style:  TextStyle(
+                          style:  const TextStyle(
                             color: Colors.white,
                           ),),
                         Row(
                           children: [
                             Text(Utils.toDate(e.dateTime),
-                              style:  TextStyle(
+                              style:  const TextStyle(
                                 color: Colors.white,
                               ),),
-                            Text("  "),
+                            const Text("  "),
                             Text(Utils.toTime(e.dateTime),
-                              style:  TextStyle(
+                              style:  const TextStyle(
                                 color: Colors.white,
                               ),),
                           ],
@@ -199,7 +199,7 @@ class _Project_eventState extends State<Project_event> {
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(header, style: TextStyle(fontWeight: FontWeight.bold)),
+          Text(header, style: const TextStyle(fontWeight: FontWeight.bold)),
           child,
         ],
       );
@@ -210,7 +210,7 @@ class _Project_eventState extends State<Project_event> {
   }) =>
       ListTile(
         title: Text(text),
-        trailing: Icon(Icons.arrow_drop_down),
+        trailing: const Icon(Icons.arrow_drop_down),
         onTap: onClicked,
       );
 
